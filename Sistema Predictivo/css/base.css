@@ -1,0 +1,39 @@
+@import url(https://icomoon.io/);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: #f1f1f1;
+    margin: 0;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.content {
+    width: 100%;
+    margin-left: 100px;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 80px;
+    position: fixed;
+    background-color: #eef2f7;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+

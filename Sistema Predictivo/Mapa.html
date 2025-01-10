@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Accidentes</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
+    <link rel="stylesheet" href="css/mapa.css">
+</head>
+
+<body>
+    <div class="sidebar d-flex justify-content-between">
+        <div class="icon">
+            <img src="img/logo-datos.png" alt="Logo" width="40">
+        </div>
+
+        <div class="d-flex flex-column bd-highlight">
+            <div class="p-2 bd-highlight">
+                <button class="btn btn-info" style="background-color: #f7f7f7;">
+                    <a href="Reporte.html"><img src="img/estadistica.png" alt="Logo" width="30"></a>
+                </button>
+            </div>
+            <div class="p-2 bd-highlight">
+                <button class="btn btn-info" style="background-color: #6196f5;">
+                    <a href="Mapa.html"><img src="img/Mapa.png" alt="Logo" width="30"></a>
+                </button>
+            </div>
+            <div class="p-2 bd-highlight">
+                <button class="btn btn-info" style="background-color: #f7f7f7;">
+                    <a href="Datos.html"><img src="img/Datos.png" alt="Logo" width="30"></a>
+                </button>
+            </div>
+            <div class="p-2 bd-highlight">
+                <button class="btn btn-info" style="background-color: #f7f7f7;">
+                    <a href="config.html"><img src="img/Config.png" alt="Logo" width="30"></a>
+                </button>
+            </div>
+        </div>
+
+        <div class="icon mb-4">
+            <a href="index.html" title="Cerrar Sesión"><img src="img/Cerrar.png" alt="Logo" width="40"></a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h3>Mapa de Accidentes</h3>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card p-4 mb-8">
+                    <div id="map" style="height: 500px; width: 100%;"></div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4 mb-4">
+                    <h5>Leyenda</h5>
+                    <ul class="list-unstyled">
+                        <li><span class="badge bg-danger mr-2"></span> Riesgo Alto</li>
+                        <li><span class="badge bg-warning mr-2"></span> Riesgo Medio</li>
+                    </ul>
+                    <h5 class="mt-4">Accidentes Diarios</h5>
+                    <canvas id="chart" width="100" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        const ctx = document.getElementById('chart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'],
+                datasets: [{
+                    label: 'Accidentes',
+                    data: [10, 15, 8, 12, 7],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

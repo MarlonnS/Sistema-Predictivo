@@ -1,0 +1,21 @@
+@import url(base.css);
+
+#map {
+    height: 550px;
+    width: 100%;
+}
+
+.badge {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.bg-danger {
+    background-color: #ff4d4d;
+}
+
+.bg-warning {
+    background-color: #ffc107;
+}
